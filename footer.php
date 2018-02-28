@@ -10,8 +10,19 @@
 			</div><!-- #content -->
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
-				<div class="site-info">
-					<a href="<?php echo esc_url( 'https://wordpress.org/' ); ?>"><?php printf( esc_html( 'Proudly powered by %s' ), 'WordPress' ); ?></a>
+
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location'=>'primary',
+					'menu_id' => 'primary-menu',
+					'menu_class' => 'footer-navigation'
+				)
+				);
+				?>
+				
+				<p>Brought to you by &copy; <a href="http://www.redacademy.com" >RED Acadamey</a><?php echo date( 'Y' ); ?></p>
+				
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 		</div><!-- #page -->
