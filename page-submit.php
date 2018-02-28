@@ -15,6 +15,10 @@ get_header(); ?>
         <?php the_title( '<h1 class="entry-title">', '</h1>'); ?>
       </header>
 
+      <?php 
+          if( is_user_logged_in() && current_user_can( 'edit_posts' )):
+      ?>
+
       <form name="quoteForm" id="quote-submission-form">
       <!-- $('#quote-submission-form').submit(); -->
         <div>
@@ -33,7 +37,18 @@ get_header(); ?>
           <label for="quote-source-url">Provid the URL of the quote source, if avalable.</label>
           <input type="url" name="quote_source_url" id="quote-source-url">
         </div>
+
+        <input type="submit" value="Submit Quote">
       </form>
+
+      <p class="submit-success-message" style="display:none;"></p>
+
+          <?php else: ?>
+            <p>Sorry, you must be logged in to submit a quote :( </p>
+            <p>
+              <?php echo sprintf( '<a href="%1s">%2s</a>', esc_url(wp_login_url()),'Click here to login.' ); ?>
+            </p>
+          <?php endif; ?>
     </section>
 
 		</main><!-- #main -->
