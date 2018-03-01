@@ -20,8 +20,8 @@
 				)
 				);
 				?>
-				
-				<p>Brought to you by &copy; <a href="http://www.redacademy.com" >RED Acadamey</a><?php echo date( 'Y' ); ?></p>
+
+				<p>Brought to you by &copy; <a href="http://www.redacademy.com" >RED Acadamey</a><?php echo date( ' Y' ); ?></p>
 				
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->

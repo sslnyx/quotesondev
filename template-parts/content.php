@@ -12,7 +12,7 @@
         <?php the_content(); ?>
     </div><!-- .entry-content -->
     <div class="entry-meta">
-    <?php the_title('<h2 class="entry-title">&mdash;', '</h2>'); ?>
+    <?php the_title('<h2 class="entry-title">&mdash; ', '</h2>'); ?>
     
     <?php if ($source && $source_url): ?>
         <span class="source"> 
@@ -28,5 +28,5 @@
     </div><!-- .entrymeta -->
 </article><!-- #post-## -->
 <?php if ( is_home() || is_single() ): ?>
-    <button type="button" id="new-quote-button">Anotha one!</button>
+    <button type="button" id="new-quote-button">Show Me Another One!</button>
 <?php endif; ?>
