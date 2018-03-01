@@ -40,7 +40,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Submit a Quote Page
 --------------------------------------------------------------*/
 html {
-  font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
 
@@ -222,7 +221,7 @@ th {
 # Embedded Fonts
 --------------------------------------------------------------*/
 @font-face {
-  font-family: 'Exo';
+  font-family: 'Exo-Medium';
   src: url("../../assets/fonts/Exo-Medium.eot");
   src: url("../../assets/fonts/Exo-Medium.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Exo-Medium.woff2") format("woff2"), url("../../assets/fonts/Exo-Medium.ttf") format("truetype"), url("../../assets/fonts/Exo-Medium.svg#Exo-Medium") format("svg");
   font-weight: 500;
@@ -236,7 +235,7 @@ th {
   font-style: italic; }
 
 @font-face {
-  font-family: 'Exo';
+  font-family: 'Exo-light';
   src: url("../../assets/fonts/Exo-Light.eot");
   src: url("../../assets/fonts/Exo-Light.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Exo-Light.woff2") format("woff2"), url("../../assets/fonts/Exo-Light.ttf") format("truetype"), url("../../assets/fonts/Exo-Light.svg#Exo-Light") format("svg");
   font-weight: 300;
@@ -258,13 +257,16 @@ input,
 select,
 textarea {
   color: #ffffff;
-  font-family: "Exo", sans-serif;
+  font-family: "Exo-light", sans-serif;
   font-size: 1rem;
   line-height: 1.5; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
+
+.entry-title {
+  font-weight: 300; }
 
 /* Copy */
 p {
@@ -679,7 +681,8 @@ a:hover {
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: flex-end; }
+          justify-content: flex-end;
+  line-height: 1rem; }
   .site-footer ul {
     display: -webkit-box;
     display: -ms-flexbox;
