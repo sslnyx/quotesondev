@@ -76,7 +76,8 @@ template {
   display: none; }
 
 a {
-  background-color: transparent; }
+  background-color: transparent;
+  text-decoration: none; }
 
 a:active,
 a:hover {
@@ -431,11 +432,11 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
+  color: #0c0; }
   a:visited {
-    color: purple; }
+    color: #0c0; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #006600; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -613,8 +614,7 @@ object {
 --------------------------------------------------------------*/
 /* All Archives Page */
 .logo {
-  margin: 0 auto;
-  width: 700px; }
+  width: 300px; }
 
 .site {
   max-width: 1080px;
@@ -625,27 +625,13 @@ object {
 .site-header {
   margin-top: 3rem; }
 
-.site-content {
-  margin: 4.5rem 175px 1.5rem;
-  position: relative; }
-  .site-content:before {
-    content: "\f10d";
-    left: -175px; }
-  .site-content:after {
-    content: "\f10e";
-    right: -175px; }
-  .site-content:before, .site-content:after {
-    color: #0c0;
-    font-family: FontAwesome;
-    font-size: 125px;
-    line-height: 120px;
-    position: absolute;
-    top: 0; }
+.site-content:before, .site-content:after {
+  display: none; }
 
 .entry-content {
   margin-top: 3rem; }
   .entry-content p {
-    font-size: 2.5rem; }
+    font-size: 1.5rem; }
 
 .entry-title {
   display: inline; }
@@ -653,44 +639,28 @@ object {
 .entry-meta {
   margin-bottom: 3rem; }
 
-a,
-a:visited {
-  color: #0c0;
-  text-decoration: none; }
-
-a:hover {
-  color: #006600; }
-
 .source {
   font-size: 1.25rem;
   font-style: italic; }
 
-#new-quote-button {
-  margin: 0 auto; }
-
-#new-quote-button {
+button {
   display: block; }
 
 .site-footer {
   margin-top: 3.75rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   line-height: 1rem; }
   .site-footer ul {
+    padding-left: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    list-style: none; }
+    list-style: none;
+    margin-left: 0; }
     .site-footer ul li {
       padding: 0 1rem;
       border-right: 1px solid #fff; }
-  .site-footer p {
-    margin: 0;
-    padding-left: 1rem; }
+      .site-footer ul li:first-child {
+        padding-left: 0; }
 
 /*                          Archives                      */
 .site-content ul {
@@ -714,3 +684,48 @@ a:hover {
     font-size: 1rem; }
 
 /* Submit a Quote Page */
+@media screen and (min-width: 620px) {
+  .logo {
+    width: 500px; }
+  .site-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    .site-footer p {
+      margin: 0;
+      padding-left: 1rem; }
+  .entry-content p {
+    font-size: 1.75rem; } }
+
+@media screen and (min-width: 1080px) {
+  .logo {
+    margin: 0 auto;
+    width: 700px; }
+  .site-content {
+    margin: 4.5rem 175px 1.5rem;
+    position: relative; }
+    .site-content:before {
+      content: "\f10d";
+      left: -175px; }
+    .site-content:after {
+      content: "\f10e";
+      right: -175px; }
+    .site-content:before, .site-content:after {
+      display: block;
+      color: #0c0;
+      font-family: FontAwesome;
+      font-size: 125px;
+      line-height: 120px;
+      position: absolute;
+      top: 0; }
+  .site-footer {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  button {
+    margin: 0 auto; }
+  .entry-content p {
+    font-size: 2.5rem; } }

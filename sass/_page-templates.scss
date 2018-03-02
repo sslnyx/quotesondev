@@ -5,8 +5,7 @@
 /* All Archives Page */
 
 .logo {
-  margin: 0 auto;
-  width: 700px;
+  width: 300px;
 }
 
 .site {
@@ -21,31 +20,16 @@
 }
 
 .site-content {
-  margin: 4.5rem 175px 1.5rem;
-  position: relative;
-  &:before {
-    content: "\f10d";
-    left: -175px;
-  }
-  &:after {
-    content: "\f10e";
-    right: -175px;
-  }
   &:before,
   &:after {
-    color: #0c0;
-    font-family: FontAwesome;
-    font-size: 125px;
-    line-height: 120px;
-    position: absolute;
-    top: 0;
+    display: none;
   }
 }
 
 .entry-content {
   margin-top: 3rem;
   p {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -57,45 +41,30 @@
   margin-bottom: 3rem;
 }
 
-a,
-a:visited {
-  color: #0c0;
-  text-decoration: none;
-}
-
-a:hover {
-  color: darken(#0c0, 20%);
-}
-
 .source {
   font-size: 1.25rem;
   font-style: italic;
 }
 
-#new-quote-button {
-  margin: 0 auto;
-}
-
-#new-quote-button {
+button {
   display: block;
 }
 
 .site-footer {
   margin-top: 3.75rem;
-  display: flex;
-  justify-content: flex-end;
   line-height: 1rem;
   ul {
+    padding-left: 0;
     display: flex;
     list-style: none;
+    margin-left:0;
     li {
+      &:first-child {
+        padding-left: 0;
+      }
       padding: 0 1rem;
       border-right: 1px solid #fff;
     }
-  }
-  p {
-    margin: 0;
-    padding-left: 1rem;
   }
 }
 
@@ -105,13 +74,13 @@ a:hover {
   ul {
     display: flex;
     flex-wrap: wrap;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     li {
       font-size: 1.25rem;
       list-style: none;
       padding-right: 1rem;
-      margin-bottom:0.5rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -120,7 +89,7 @@ a:hover {
 
 .post-107 {
   .entry-content {
-    margin:1.5rem 0;
+    margin: 1.5rem 0;
     p {
       font-size: 1rem;
     }
@@ -128,3 +97,65 @@ a:hover {
 }
 
 /* Submit a Quote Page */
+
+@media screen and (min-width: 620px) {
+  .logo {
+    width: 500px;
+  }
+
+  .site-footer{
+    display: flex;
+    justify-content: flex-start;
+    p {
+      margin: 0;
+      padding-left: 1rem;
+    }
+  }
+  .entry-content {
+    p {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .logo {
+    margin: 0 auto;
+    width: 700px;
+  }
+  .site-content {
+    margin: 4.5rem 175px 1.5rem;
+    position: relative;
+    &:before {
+      content: "\f10d";
+      left: -175px;
+    }
+    &:after {
+      content: "\f10e";
+      right: -175px;
+    }
+    &:before,
+    &:after {
+      display: block;
+      color: #0c0;
+      font-family: FontAwesome;
+      font-size: 125px;
+      line-height: 120px;
+      position: absolute;
+      top: 0;
+    }
+  }
+  .site-footer {
+    justify-content: flex-end;
+  }
+  button{
+  margin: 0 auto;  
+  }
+  .entry-content {
+    p {
+      font-size: 2.5rem;
+    }
+  }
+
+}
+
