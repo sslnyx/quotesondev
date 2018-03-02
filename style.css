@@ -628,23 +628,19 @@ object {
 .site-content {
   margin: 4.5rem 175px 1.5rem;
   position: relative; }
-
-.site-content:before {
-  content: "\f10d";
-  left: -175px; }
-
-.site-content:after {
-  content: "\f10e";
-  right: -175px; }
-
-.site-content:before,
-.site-content:after {
-  color: #0c0;
-  font-family: FontAwesome;
-  font-size: 125px;
-  line-height: 120px;
-  position: absolute;
-  top: 0; }
+  .site-content:before {
+    content: "\f10d";
+    left: -175px; }
+  .site-content:after {
+    content: "\f10e";
+    right: -175px; }
+  .site-content:before, .site-content:after {
+    color: #0c0;
+    font-family: FontAwesome;
+    font-size: 125px;
+    line-height: 120px;
+    position: absolute;
+    top: 0; }
 
 .entry-content {
   margin-top: 3rem; }
@@ -657,7 +653,8 @@ object {
 .entry-meta {
   margin-bottom: 3rem; }
 
-a, a:visited {
+a,
+a:visited {
   color: #0c0;
   text-decoration: none; }
 
@@ -696,4 +693,24 @@ a:hover {
     padding-left: 1rem; }
 
 /*                          Archives                      */
+.site-content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0; }
+  .site-content ul li {
+    font-size: 1.25rem;
+    list-style: none;
+    padding-right: 1rem;
+    margin-bottom: 0.5rem; }
+
+/*  About */
+.post-107 .entry-content {
+  margin: 1.5rem 0; }
+  .post-107 .entry-content p {
+    font-size: 1rem; }
+
 /* Submit a Quote Page */

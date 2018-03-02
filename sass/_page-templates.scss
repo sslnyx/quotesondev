@@ -4,55 +4,52 @@
 
 /* All Archives Page */
 
-.logo{
+.logo {
   margin: 0 auto;
   width: 700px;
 }
 
-.site{
+.site {
   max-width: 1080px;
-  margin:0 auto;
-  padding:2.5%;
-  width:100%;
+  margin: 0 auto;
+  padding: 2.5%;
+  width: 100%;
 }
 
-.site-header{
+.site-header {
   margin-top: 3rem;
 }
 
-.site-content{
+.site-content {
   margin: 4.5rem 175px 1.5rem;
   position: relative;
+  &:before {
+    content: "\f10d";
+    left: -175px;
+  }
+  &:after {
+    content: "\f10e";
+    right: -175px;
+  }
+  &:before,
+  &:after {
+    color: #0c0;
+    font-family: FontAwesome;
+    font-size: 125px;
+    line-height: 120px;
+    position: absolute;
+    top: 0;
+  }
 }
 
-.site-content:before{
-  content: "\f10d";
-  left:-175px;
-}
-
-.site-content:after{
-  content: "\f10e";
-  right:-175px;  
-}
-
-.site-content:before,
-.site-content:after{
-  color: #0c0;
-  font-family: FontAwesome;
-  font-size: 125px;
-  line-height:120px;
-  position: absolute;
-  top:0;
-}
-
-.entry-content{
+.entry-content {
   margin-top: 3rem;
-  p{
+  p {
     font-size: 2.5rem;
   }
 }
 
-.entry-title{
+.entry-title {
   display: inline;
 }
 
@@ -60,16 +57,17 @@
   margin-bottom: 3rem;
 }
 
-a, a:visited{
+a,
+a:visited {
   color: #0c0;
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   color: darken(#0c0, 20%);
 }
 
-.source{
+.source {
   font-size: 1.25rem;
   font-style: italic;
 }
@@ -82,30 +80,51 @@ a:hover{
   display: block;
 }
 
-.site-footer{
-  margin-top:3.75rem;
-  display:flex;
+.site-footer {
+  margin-top: 3.75rem;
+  display: flex;
   justify-content: flex-end;
-  line-height:1rem;
-  ul{
+  line-height: 1rem;
+  ul {
     display: flex;
     list-style: none;
-    li{
-      padding:0 1rem;
+    li {
+      padding: 0 1rem;
       border-right: 1px solid #fff;
     }
   }
-  p{
+  p {
     margin: 0;
     padding-left: 1rem;
   }
 }
+
 /*                          Archives                      */
 
+.site-content {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin:0;
+    padding:0;
+    li {
+      font-size: 1.25rem;
+      list-style: none;
+      padding-right: 1rem;
+      margin-bottom:0.5rem;
+    }
+  }
+}
 
+/*  About */
 
-
-
-
+.post-107 {
+  .entry-content {
+    margin:1.5rem 0;
+    p {
+      font-size: 1rem;
+    }
+  }
+}
 
 /* Submit a Quote Page */

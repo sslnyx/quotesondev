@@ -15,7 +15,7 @@ get_header(); ?>
         <h1><?php the_title() ?></h1>
       </header>
 
-      <div class="post-arhives">
+      <div class="post-archives">
         <h2>Quote Authors</h2>
         <ul>
         <?php
