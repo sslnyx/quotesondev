@@ -222,7 +222,7 @@ th {
 # Embedded Fonts
 --------------------------------------------------------------*/
 @font-face {
-  font-family: 'Exo-Medium';
+  font-family: 'Exo';
   src: url("../../assets/fonts/Exo-Medium.eot");
   src: url("../../assets/fonts/Exo-Medium.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Exo-Medium.woff2") format("woff2"), url("../../assets/fonts/Exo-Medium.ttf") format("truetype"), url("../../assets/fonts/Exo-Medium.svg#Exo-Medium") format("svg");
   font-weight: 500;
@@ -236,7 +236,7 @@ th {
   font-style: italic; }
 
 @font-face {
-  font-family: 'Exo-light';
+  font-family: 'Exo';
   src: url("../../assets/fonts/Exo-Light.eot");
   src: url("../../assets/fonts/Exo-Light.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/Exo-Light.woff2") format("woff2"), url("../../assets/fonts/Exo-Light.ttf") format("truetype"), url("../../assets/fonts/Exo-Light.svg#Exo-Light") format("svg");
   font-weight: 300;
@@ -258,9 +258,10 @@ input,
 select,
 textarea {
   color: #ffffff;
-  font-family: "Exo-light", sans-serif;
+  font-family: "Exo", sans-serif;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.5;
+  font-weight: 300; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
