@@ -23,6 +23,18 @@ Responsive website that allows a user to get random post from archive using the 
 
 the 'blur' function is trigger when there are input value in the input area on the submit page.
 
+![picture](./submitAnimation.gif)
+
+```
+.done(function (data) {
+      $('#quote-submission-form').hide('slow');
+      $('.quote-submission-wrapper .entry-title').append('<p>' + api_vars.success + '</p>');
+    });
+```
+
+after the submission the form will hide by the hide function, and submit success message will appear.
+
+
 ## Development
 
 To fix a bug or enhance an existing module, follow these steps:
