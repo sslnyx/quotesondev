@@ -1,12 +1,6 @@
 // fetch a random quote post 
 (function ($) {
-  //fetch a random quote post http://localhost:8888/project5/wp-json/wp/v2/posts
-
   //load all the posts and count them and then do a random number from 1 to whatver
-
-  //history api mdn HISTORYpushstate
-
-  //submit a new quote with the form using jquery 
 
   var rootUrl = api_vars.root_url;
 
@@ -46,13 +40,26 @@
           $(".entry-title").append('&mdash; ' + data[0].title.rendered);
           $(".source").empty();
         }
+        var push_url = api_vars.home_url + "/" + data[0].slug + "/"; 
+        history.pushState(null, null, push_url);
+  
       }
+
     });
+//history api,
 
+
+    lastPage = document.URL;
+
+    $(window).on('popstate', function() {
+      console.log("popstate fired!");
+      if (window.location.hash.indexOf('qm-overview ') === 1) {
+        return false;
+      } else {
+        window.location.replace(lastPage);
+      }
   });
-
-
-
+  });
 
   // submit a new quote from the form, e.g. button .on click form .submit
   // post request wp-json/wp/v2/posts
@@ -81,6 +88,3 @@
   }); // End submit quote button
 
 })(jQuery);
-//history api,
-
-// submit a new quote with the form using ajax
