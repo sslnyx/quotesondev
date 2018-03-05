@@ -1,68 +1,86 @@
+// fetch a random quote post 
 (function ($) {
+  //fetch a random quote post http://localhost:8888/project5/wp-json/wp/v2/posts
 
-  // fetch a random quote post 
-  (function ($) {
-    //fetch a random quote post http://localhost:8888/project5/wp-json/wp/v2/posts
+  //load all the posts and count them and then do a random number from 1 to whatver
 
-    //load all the posts and count them and then do a random number from 1 to whatver
+  //history api mdn HISTORYpushstate
 
-    //history api mdn HISTORYpushstate
+  //submit a new quote with the form using jquery 
 
-    //submit a new quote with the form using jquery 
+  var rootUrl = api_vars.root_url;
 
-    var rootUrl = api_vars.root_url;
+  $('#new-quote-button').on('click', function (s) {
+    s.preventDefault();
+    $.ajax({
+      url: rootUrl + 'wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+      success: function (data) {
 
-    $('#new-quote-button').on('click', function (s) {
-      s.preventDefault();
-      $.ajax({
-        url: rootUrl + 'wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1',
-        success: function (data) {
+        // var content = data[0].content.rendered;
+        var quoteUrl = data[0]._qod_quote_source_url;
+        // var template = '';
 
-          var content = data[0].content.rendered;
-          var quoteUrl = data[0]._qod_quote_source_url;
-          var template = '';
+        if (quoteUrl.length > 0) {
 
-          if (quoteUrl.length > 0) {
+          console.log(data);
+          $(".entry-content").empty();
+          $(".entry-content").append(data[0].content.rendered);
+          $(".entry-title").empty();
+          $(".entry-title").append('&mdash; ' + data[0].title.rendered);
 
-            console.log(data);
-            $(".entry-content").empty();
-            $(".entry-content").append(data[0].content.rendered);
-            $(".entry-title").empty();
-            $(".entry-title").append('&mdash; ' + data[0].title.rendered);
+          // article append template variable
 
-            // article append template variable
-
-            $(".source").empty();
-            $(".source").append(', <a href="' + data[0]._qod_quote_source_url + '">' + data[0]._qod_quote_source + '</a>');
-          } else if (data[0]._qod_quote_source.length > 0) {
-            $(".entry-content").empty();
-            $(".entry-content").append(data[0].content.rendered);
-            $(".entry-title").empty();
-            $(".entry-title").append('&mdash; ' + data[0].title.rendered);
-            $(".source").empty();
-            $(".source").append(" , " + data[0]._qod_quote_source);
-          } else {
-            $(".entry-content").empty();
-            $(".entry-content").append(data[0].content.rendered);
-            $(".entry-title").empty();
-            $(".entry-title").append('&mdash; ' + data[0].title.rendered);
-            $(".source").empty();
-          }
+          $(".source").empty();
+          $(".source").append(', <a href="' + data[0]._qod_quote_source_url + '">' + data[0]._qod_quote_source + '</a>');
+        } else if (data[0]._qod_quote_source.length > 0) {
+          $(".entry-content").empty();
+          $(".entry-content").append(data[0].content.rendered);
+          $(".entry-title").empty();
+          $(".entry-title").append('&mdash; ' + data[0].title.rendered);
+          $(".source").empty();
+          $(".source").append(" , " + data[0]._qod_quote_source);
+        } else {
+          $(".entry-content").empty();
+          $(".entry-content").append(data[0].content.rendered);
+          $(".entry-title").empty();
+          $(".entry-title").append('&mdash; ' + data[0].title.rendered);
+          $(".source").empty();
         }
-      });
-
+      }
     });
 
-
-    // submit a new quote from the form, e.g. button .on click form .submit
-    // post request wp-json/wp/v2/posts
-    // before send nonce authentication, it's in the slides from wp ajax lesson
+  });
 
 
-  })(jQuery);
-  //history api,
-
-  // submit a new quote with the form using ajax
 
 
-})(jQuery)
+  // submit a new quote from the form, e.g. button .on click form .submit
+  // post request wp-json/wp/v2/posts
+  // before send nonce authentication, it's in the slides from wp ajax lesson
+  $('.submit-btn').on('click', function (event) {
+    event.preventDefault();
+
+    $.ajax({
+      method: 'post',
+      url: api_vars.root_url + 'wp/v2/posts/',
+      data: {
+        title: $('#quote-author').val(),
+        content: $('#quote-content').val(),
+        _qod_quote_source: $('#quote-source').val(),
+        _qod_quote_source_url: $('#quote-source-url').val(),
+      },
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
+      }
+    }).done( function(data) {
+        console.log(api_vars.success);
+        $('#quote-submission-form').hide('slow');
+        $('.quote-submission-wrapper .entry-title').append('<p>' + api_vars.success + '</p>');
+    });
+
+  }); // End submit quote button
+
+})(jQuery);
+//history api,
+
+// submit a new quote with the form using ajax

@@ -45,7 +45,7 @@ get_header(); ?>
     wp_tag_cloud(
       array(
         'smallest' => 1,
-        'largest' => 2,
+        'largest' => 1,
         'unit' => 'rem',
         'format' => 'list',
       )
