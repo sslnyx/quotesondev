@@ -76,8 +76,7 @@
       beforeSend: function (xhr) {
         xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
       }
-    }).done(function (data) {
-      console.log(api_vars.success);
+    }).done(function () {
       $('#quote-submission-form').hide('slow');
       $('.quote-submission-wrapper .entry-title').append('<p>' + api_vars.success + '</p>');
     });
@@ -89,7 +88,7 @@
   $('input[type="text"],input[type="url"]').on('blur', function () {
 
     if ($(this).val() !== '') {
-      console.log(this);
+      // console.log(this);
       $(this).addClass('focusEx');
     } else {
 
