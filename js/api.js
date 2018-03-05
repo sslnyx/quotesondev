@@ -45,12 +45,12 @@
 
     });
 
-  });// quote btn function
+  }); // quote btn function
 
-      //history api,
+  //history api,
 
-  window.onpopstate =  function () {
-    console.log("popstate fired!");
+  window.onpopstate = function () {
+    // console.log("popstate fired!");
     if (window.location.hash.indexOf('qm-overview ') === 1) {
       return false;
     } else {
@@ -83,5 +83,20 @@
     });
 
   }); // End submit quote button
+
+
+  // add  focusEx class if theres in val in input
+  $('input[type="text"],input[type="url"]').on('blur', function () {
+
+    if ($(this).val() !== '') {
+      console.log(this);
+      $(this).addClass('focusEx');
+    } else {
+
+      $(this).removeClass('focusEx');
+
+    }
+
+  });
 
 })(jQuery);
